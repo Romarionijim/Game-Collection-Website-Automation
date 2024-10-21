@@ -1,0 +1,23 @@
+{
+  "name": "arcade-game-playwright-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:chromium": "npx playwright test --project=chromium --workers 1",
+    "test:firefox": "npx playwright test --project=firefox",
+    "test:webkit": "npx playwright test --project=webkit",
+    "test:only-changed": "npx playwright test --project=chromium --only-changed --workers 1",
+    "build": "tsc -p tsconfig.json --noEmit",
+    "generate-barrels": "barrelsby --delete -d . -l below --exclude spec.ts --exclude spec.js"
+    
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.48.1",
+    "@types/node": "^22.7.7",
+    "barrelsby": "^2.8.1"
+  }
+}
