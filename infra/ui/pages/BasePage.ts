@@ -61,9 +61,22 @@ export class BasePage {
   async getElementInnerText(element: Locator) {
     const elementHtmlTag = await element.evaluate(el => el.tagName.toLowerCase());
     if (elementHtmlTag === 'input') {
-      return await element.inputValue();
+      return (await element.inputValue()).trim();
     } else {
-      return await element.innerText();
+      return (await element.innerText()).trim();
     }
+  }
+
+  async clickAndChooseFromDropdownByText(dropdownLocator: Locator, dropdownList: Locator, dropdownItemText: string) {
+    await this.clickElement(dropdownLocator);
+    const dropdownListItems = await dropdownList.all();
+    for (const item of dropdownListItems) {
+      const itemText = (await item.innerText()).trim();
+      if (itemText === dropdownItemText) {
+        await this.clickElement(item);
+        return;
+      }
+    }
+    throw new Error(`Item ${dropdownItemText} not found in dropdown list`);
   }
 }

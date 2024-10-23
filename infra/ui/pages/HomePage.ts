@@ -28,18 +28,6 @@ export class HomePage extends BasePage {
     return addGameInputFields;
   }
 
-  private async addGameTitle() {
-
-  }
-
-  private async rateCommunityStarRating() {
-
-  }
-
-  private async clearCommunityStarRating() {
-
-  }
-
   /**
    *@description  this function is relevant for clicking on the edit pencil icon and on the check-mark done button
    */
@@ -63,6 +51,18 @@ export class HomePage extends BasePage {
 
   async getDeleteGameTrashButtonVisibility() {
     await this.getElementVisibility(this.deleteGameTrashButtonLocator);
+  }
+
+  private async addGameTitle() {
+
+  }
+
+  private async rateCommunityStarRating() {
+
+  }
+
+  private async clearCommunityStarRating() {
+
   }
 }
 
