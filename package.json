@@ -10,12 +10,12 @@
     "test:only-changed": "npx playwright test --project=chromium --only-changed --workers 1",
     "build": "tsc -p tsconfig.json --noEmit",
     "generate-barrels": "barrelsby --delete -d . -l below --exclude spec.ts --exclude spec.js"
-    
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@faker-js/faker": "^9.0.3",
     "@playwright/test": "^1.48.1",
     "@types/node": "^22.7.7",
     "barrelsby": "^2.8.1"
